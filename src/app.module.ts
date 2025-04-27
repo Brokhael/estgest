@@ -6,6 +6,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ClientModule } from './client/client.module';
 import { ServiceModule } from './service/service.module';
 import { ReservationModule } from './reservation/reservation.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { ReservationModule } from './reservation/reservation.module';
     PrismaModule,
     ClientModule,
     ServiceModule,
-    ReservationModule
+    ReservationModule,
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
