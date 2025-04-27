@@ -5,7 +5,7 @@ import { IsInt, IsOptional, IsString } from 'class-validator';
 export class UpdateServiceDto extends PartialType(CreateServiceDto) {
   @IsString()
   @IsOptional()
-  name: string;
+  name?: string;
 
   @IsString()
   @IsOptional()
@@ -13,7 +13,7 @@ export class UpdateServiceDto extends PartialType(CreateServiceDto) {
 
   @IsInt()
   @IsOptional()
-  durantion: number;
+  durantion?: number;
 
   @IsInt()
   @IsOptional()
