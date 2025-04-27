@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgresql-cont
+    restart: always
+    environment:
+      POSTGRES_USER: estgestusr
+      POSTGRES_PASSWORD: estgestpass
+      POSTGRES_DB: estgestdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+volumes:
+  pgdata:
