@@ -14,5 +14,8 @@ export class CreateClientDto {
 
   @IsString()
   @IsOptional()
-  notes?: string;
+  notes?: string
+
+  @IsString()
+  businessId: string
 }

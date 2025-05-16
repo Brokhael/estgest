@@ -13,4 +13,7 @@ export class CreateServiceDto {
 
   @IsInt()
   price: number;
+
+  @IsString()
+  businessId: string
 }

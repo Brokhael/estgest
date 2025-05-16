@@ -31,4 +31,9 @@ export class ClientController {
   remove(@Param('id') id: string) {
     return this.clientService.remove(id);
   }
+
+  @Get('business/:businessId')
+  findByBusiness(@Param('businessId') businessId: string) {
+    return this.clientService.findAllByBusinessId(businessId);
+  }
 }

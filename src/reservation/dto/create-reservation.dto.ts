@@ -12,4 +12,7 @@ export class CreateReservationDto {
 
   @IsString()
   notes: string;
+
+  @IsString()
+  businessId: string
 }
