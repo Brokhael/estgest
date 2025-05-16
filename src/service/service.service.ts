@@ -35,4 +35,10 @@ export class ServiceService {
       where: { id },
     });
   }
+
+  findAllByBusinessId(businessId: string) {
+    return this.prisma.service.findMany({
+      where: { businessId },
+    });
+  }
 }

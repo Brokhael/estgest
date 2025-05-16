@@ -35,4 +35,10 @@ export class ReservationService {
       where: { id },
     });
   }
+
+  findAllByBusinessId(businessId: string) {
+    return this.prisma.reservation.findMany({
+      where: { businessId },
+    });
+  }
 }

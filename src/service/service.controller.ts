@@ -31,4 +31,9 @@ export class ServiceController {
   remove(@Param('id') id: string) {
     return this.serviceService.remove(id);
   }
+
+  @Get('business/:businessId')
+  findByBusiness(@Param('businessId') businessId: string) {
+    return this.serviceService.findAllByBusinessId(businessId);
+  }
 }

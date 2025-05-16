@@ -31,4 +31,9 @@ export class ReservationController {
   remove(@Param('id') id: string) {
     return this.reservationService.remove(id);
   }
+
+  @Get('business/:businessId')
+  findByBusiness(@Param('businessId') businessId: string) {
+    return this.reservationService.findAllByBusinessId(businessId);
+  }
 }
