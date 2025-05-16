@@ -8,6 +8,8 @@ import { ServiceModule } from './service/service.module';
 import { ReservationModule } from './reservation/reservation.module';
 import { UserModule } from './user/user.module';
 import { BusinessModule } from './business/business.module';
+import { BusinessHoursModule } from './business-hours/business-hours.module';
+import { BusinessHoursExceptionModule } from './business-hours-exception/business-hours-exception.module';
 
 @Module({
   imports: [
@@ -17,7 +19,9 @@ import { BusinessModule } from './business/business.module';
     ServiceModule,
     ReservationModule,
     UserModule,
-    BusinessModule
+    BusinessModule,
+    BusinessHoursModule,
+    BusinessHoursExceptionModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -56,3 +56,25 @@ model Business {
   email     String @unique
   createdAt DateTime @default(now())
 }
+
+model BusinessHours {
+  id         String   @id @default(uuid())
+  businessId String
+  weekday    Int      // 0 = Sunday, 6 = Saturday
+  opensAt    String   // Format: 'HH:mm'
+  closesAt   String   // Format: 'HH:mm'
+
+  @@unique([businessId, weekday, opensAt, closesAt])
+  @@index([businessId, weekday])
+}
+
+model BusinessHoursException {
+  id         String   @id @default(uuid())
+  businessId String
+  date       DateTime // Specific day (e.g. holiday)
+  opensAt    String?  // Null = closed
+  closesAt   String?  // Null = closed
+
+  @@unique([businessId, date])
+  @@index([businessId, date])
+}
