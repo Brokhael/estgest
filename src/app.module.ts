@@ -10,6 +10,7 @@ import { UserModule } from './user/user.module';
 import { BusinessModule } from './business/business.module';
 import { BusinessHoursModule } from './business-hours/business-hours.module';
 import { BusinessHoursExceptionModule } from './business-hours-exception/business-hours-exception.module';
+import { AvailabilityModule } from './availability/availability.module';
 
 @Module({
   imports: [
@@ -21,7 +22,8 @@ import { BusinessHoursExceptionModule } from './business-hours-exception/busines
     UserModule,
     BusinessModule,
     BusinessHoursModule,
-    BusinessHoursExceptionModule
+    BusinessHoursExceptionModule,
+    AvailabilityModule
   ],
   controllers: [AppController],
   providers: [AppService],
