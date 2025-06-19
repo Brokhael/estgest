@@ -24,17 +24,15 @@ export class AvailabilityService {
       opensAt = exception.opensAt ?? null;
       closesAt = exception.closesAt ?? null;
     } else {
-      const hours = await this.prisma.businessHours.findUnique({
+      const businessHours = await this.prisma.businessHours.findFirst({
         where: {
-          businessId_weekday: {
-            businessId,
-            weekday,
-          },
+          businessId,
+          weekday,
         },
       });
 
-      opensAt = hours?.opensAt ?? null;
-      closesAt = hours?.closesAt ?? null;
+      opensAt = businessHours?.opensAt ?? null;
+      closesAt = businessHours?.closesAt ?? null;
     }
 
     if (!opensAt || !closesAt) return [];
